@@ -1,0 +1,14 @@
+# Godot generated folders
+.import/
+.godot/
+
+# Export presets and local build outputs
+export_presets.cfg
+build/
+
+# Mono / C# support
+.mono/
+data_*/
+
+# macOS
+.DS_Store

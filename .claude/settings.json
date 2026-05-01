@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Applications/**)",
+      "Read(//Users/larry/Applications/**)",
+      "Bash(mdfind \"kMDItemCFBundleIdentifier == 'org.godotengine.godot'\")"
+    ]
+  }
+}

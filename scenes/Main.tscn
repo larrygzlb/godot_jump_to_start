@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="1_player"]
+
+[sub_resource type="RectangleShape2D" id="1_ground"]
+size = Vector2(1280, 40)
+
+[sub_resource type="RectangleShape2D" id="2_plat1"]
+size = Vector2(200, 20)
+
+[sub_resource type="RectangleShape2D" id="3_plat2"]
+size = Vector2(150, 20)
+
+[sub_resource type="RectangleShape2D" id="4_plat3"]
+size = Vector2(200, 20)
+
+[sub_resource type="RectangleShape2D" id="5_wall_l"]
+size = Vector2(20, 800)
+
+[sub_resource type="RectangleShape2D" id="6_wall_r"]
+size = Vector2(20, 800)
+
+[node name="Main" type="Node2D"]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Background" type="Polygon2D" parent="World"]
+z_index = -1
+polygon = PackedVector2Array(0, 0, 1280, 0, 1280, 720, 0, 720)
+color = Color(0.53, 0.81, 0.98, 1)
+
+[node name="Ground" type="StaticBody2D" parent="World"]
+position = Vector2(640, 680)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Ground"]
+shape = SubResource("1_ground")
+
+[node name="Visual" type="Polygon2D" parent="World/Ground"]
+polygon = PackedVector2Array(-640, -20, 640, -20, 640, 60, -640, 60)
+color = Color(0.35, 0.2, 0.05, 1)
+
+[node name="Platform1" type="StaticBody2D" parent="World"]
+position = Vector2(350, 560)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Platform1"]
+shape = SubResource("2_plat1")
+
+[node name="Visual" type="Polygon2D" parent="World/Platform1"]
+polygon = PackedVector2Array(-100, -10, 100, -10, 100, 10, -100, 10)
+color = Color(0.2, 0.55, 0.15, 1)
+
+[node name="Platform2" type="StaticBody2D" parent="World"]
+position = Vector2(630, 440)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Platform2"]
+shape = SubResource("3_plat2")
+
+[node name="Visual" type="Polygon2D" parent="World/Platform2"]
+polygon = PackedVector2Array(-75, -10, 75, -10, 75, 10, -75, 10)
+color = Color(0.2, 0.55, 0.15, 1)
+
+[node name="Platform3" type="StaticBody2D" parent="World"]
+position = Vector2(920, 320)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Platform3"]
+shape = SubResource("4_plat3")
+
+[node name="Visual" type="Polygon2D" parent="World/Platform3"]
+polygon = PackedVector2Array(-100, -10, 100, -10, 100, 10, -100, 10)
+color = Color(0.2, 0.55, 0.15, 1)
+
+[node name="LeftWall" type="StaticBody2D" parent="World"]
+position = Vector2(-10, 360)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/LeftWall"]
+shape = SubResource("5_wall_l")
+
+[node name="RightWall" type="StaticBody2D" parent="World"]
+position = Vector2(1290, 360)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/RightWall"]
+shape = SubResource("6_wall_r")
+
+[node name="Player" parent="World" instance=ExtResource("1_player")]
+position = Vector2(200, 640)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Instructions" type="Label" parent="UI"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 420.0
+offset_bottom = 90.0
+text = "Move: Arrow Keys or A / D
+Jump: Space or Up Arrow
+(Reach the top platform!)"
