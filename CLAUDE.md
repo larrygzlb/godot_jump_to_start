@@ -1,0 +1,3 @@
+The goal of this repo is supposed to build a spatial organization puzzle game in Godot. For example, "A Little to the left".
+
+When building the project, you should always add comments along the code you wrote to explain how this line is working with other parts, because the user wants to learn to build a game himself, this will be a good tutorial for him to understand the code and logic behind the game.

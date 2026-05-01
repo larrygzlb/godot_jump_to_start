@@ -1,8 +1,9 @@
-# Godot generated folders
-.import/
+# Godot generated cache (never commit these)
 .godot/
+.import/
+*.import
 
-# Export presets and local build outputs
+# Export config and build output
 export_presets.cfg
 build/
 
@@ -12,3 +13,4 @@ data_*/
 
 # macOS
 .DS_Store
+*.DS_Store

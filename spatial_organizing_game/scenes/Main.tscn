@@ -1,0 +1,419 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game_2/scripts/Main.gd" id="1_main"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Background" type="Polygon2D" parent="World"]
+z_index = -2
+polygon = PackedVector2Array(0, 0, 1280, 0, 1280, 720, 0, 720)
+color = Color(0.73, 0.8, 0.87, 1)
+
+[node name="BackdropGlowLeft" type="Polygon2D" parent="World"]
+z_index = -3
+polygon = PackedVector2Array(-20, 120, 360, 40, 520, 260, 280, 500, 20, 420)
+color = Color(0.95, 0.9, 0.72, 0.45)
+
+[node name="BackdropGlowRight" type="Polygon2D" parent="World"]
+z_index = -3
+polygon = PackedVector2Array(860, 40, 1260, 110, 1300, 420, 980, 520, 780, 270)
+color = Color(0.83, 0.9, 0.98, 0.4)
+
+[node name="BoardShadow" type="Polygon2D" parent="World"]
+z_index = -1
+polygon = PackedVector2Array(90, 92, 1210, 92, 1210, 676, 90, 676)
+color = Color(0.18, 0.24, 0.31, 0.22)
+
+[node name="Board" type="Polygon2D" parent="World"]
+z_index = -1
+polygon = PackedVector2Array(72, 74, 1192, 74, 1192, 658, 72, 658)
+color = Color(0.96, 0.95, 0.91, 1)
+
+[node name="PlayArea" type="Polygon2D" parent="World"]
+z_index = 0
+polygon = PackedVector2Array(108, 118, 1156, 118, 1156, 614, 108, 614)
+color = Color(0.87, 0.9, 0.87, 1)
+
+[node name="LeftPanel" type="Polygon2D" parent="World"]
+polygon = PackedVector2Array(136, 146, 472, 146, 472, 586, 136, 586)
+color = Color(0.9, 0.93, 0.88, 1)
+
+[node name="RightPanel" type="Polygon2D" parent="World"]
+polygon = PackedVector2Array(612, 146, 1128, 146, 1128, 586, 612, 586)
+color = Color(0.82, 0.87, 0.83, 1)
+
+[node name="Divider" type="Polygon2D" parent="World"]
+polygon = PackedVector2Array(544, 146, 584, 146, 584, 586, 544, 586)
+color = Color(0.75, 0.8, 0.73, 1)
+
+[node name="Targets" type="Node2D" parent="World"]
+
+[node name="Target1" type="Node2D" parent="World/Targets"]
+position = Vector2(740, 200)
+
+[node name="Shadow" type="Polygon2D" parent="World/Targets/Target1"]
+position = Vector2(0, 8)
+polygon = PackedVector2Array(0, -38, 38, 0, 0, 38, -38, 0)
+color = Color(0.3, 0.1, 0.1, 0.28)
+
+[node name="Rim" type="Polygon2D" parent="World/Targets/Target1"]
+polygon = PackedVector2Array(0, -34, 34, 0, 0, 34, -34, 0)
+color = Color(0.85, 0.34, 0.32, 0.55)
+
+[node name="Inner" type="Polygon2D" parent="World/Targets/Target1"]
+polygon = PackedVector2Array(0, -22, 22, 0, 0, 22, -22, 0)
+color = Color(0.42, 0.12, 0.12, 0.45)
+
+[node name="SocketHead" type="Polygon2D" parent="World/Targets/Target1"]
+polygon = PackedVector2Array(-24, -22, 24, -22, 24, -8, -24, -8)
+color = Color(0.21, 0.18, 0.17, 0.55)
+
+[node name="SocketHandle" type="Polygon2D" parent="World/Targets/Target1"]
+polygon = PackedVector2Array(-6, -8, 6, -8, 6, 26, -6, 26)
+color = Color(0.21, 0.18, 0.17, 0.55)
+
+[node name="Label" type="Label" parent="World/Targets/Target1"]
+offset_left = -42.0
+offset_top = 34.0
+offset_right = 42.0
+offset_bottom = 54.0
+text = "Hammer"
+horizontal_alignment = 1
+
+[node name="Target2" type="Node2D" parent="World/Targets"]
+position = Vector2(980, 200)
+
+[node name="Shadow" type="Polygon2D" parent="World/Targets/Target2"]
+position = Vector2(0, 8)
+polygon = PackedVector2Array(0, -38, 38, 0, 0, 38, -38, 0)
+color = Color(0.34, 0.18, 0.08, 0.28)
+
+[node name="Rim" type="Polygon2D" parent="World/Targets/Target2"]
+polygon = PackedVector2Array(0, -34, 34, 0, 0, 34, -34, 0)
+color = Color(0.85, 0.59, 0.29, 0.55)
+
+[node name="Inner" type="Polygon2D" parent="World/Targets/Target2"]
+polygon = PackedVector2Array(0, -22, 22, 0, 0, 22, -22, 0)
+color = Color(0.45, 0.24, 0.1, 0.45)
+
+[node name="SocketHandle" type="Polygon2D" parent="World/Targets/Target2"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 18, -8, 18)
+color = Color(0.2, 0.19, 0.17, 0.55)
+
+[node name="SocketTip" type="Polygon2D" parent="World/Targets/Target2"]
+polygon = PackedVector2Array(-3, -30, 3, -30, 6, -8, -6, -8)
+color = Color(0.2, 0.19, 0.17, 0.55)
+
+[node name="Label" type="Label" parent="World/Targets/Target2"]
+offset_left = -48.0
+offset_top = 34.0
+offset_right = 48.0
+offset_bottom = 54.0
+text = "Screwdriver"
+horizontal_alignment = 1
+
+[node name="Target3" type="Node2D" parent="World/Targets"]
+position = Vector2(740, 360)
+
+[node name="Shadow" type="Polygon2D" parent="World/Targets/Target3"]
+position = Vector2(0, 8)
+polygon = PackedVector2Array(0, -38, 38, 0, 0, 38, -38, 0)
+color = Color(0.32, 0.28, 0.08, 0.28)
+
+[node name="Rim" type="Polygon2D" parent="World/Targets/Target3"]
+polygon = PackedVector2Array(0, -34, 34, 0, 0, 34, -34, 0)
+color = Color(0.84, 0.78, 0.29, 0.55)
+
+[node name="Inner" type="Polygon2D" parent="World/Targets/Target3"]
+polygon = PackedVector2Array(0, -22, 22, 0, 0, 22, -22, 0)
+color = Color(0.46, 0.42, 0.1, 0.45)
+
+[node name="SocketBar" type="Polygon2D" parent="World/Targets/Target3"]
+polygon = PackedVector2Array(-34, -6, 34, -6, 34, 6, -34, 6)
+color = Color(0.19, 0.2, 0.19, 0.55)
+
+[node name="Tick1" type="Polygon2D" parent="World/Targets/Target3"]
+polygon = PackedVector2Array(-24, -6, -20, -6, -20, 6, -24, 6)
+color = Color(0.15, 0.15, 0.15, 0.55)
+
+[node name="Tick2" type="Polygon2D" parent="World/Targets/Target3"]
+polygon = PackedVector2Array(-10, -6, -6, -6, -6, 6, -10, 6)
+color = Color(0.15, 0.15, 0.15, 0.55)
+
+[node name="Tick3" type="Polygon2D" parent="World/Targets/Target3"]
+polygon = PackedVector2Array(4, -6, 8, -6, 8, 6, 4, 6)
+color = Color(0.15, 0.15, 0.15, 0.55)
+
+[node name="Tick4" type="Polygon2D" parent="World/Targets/Target3"]
+polygon = PackedVector2Array(18, -6, 22, -6, 22, 6, 18, 6)
+color = Color(0.15, 0.15, 0.15, 0.55)
+
+[node name="Label" type="Label" parent="World/Targets/Target3"]
+offset_left = -34.0
+offset_top = 34.0
+offset_right = 34.0
+offset_bottom = 54.0
+text = "Ruler"
+horizontal_alignment = 1
+
+[node name="Target4" type="Node2D" parent="World/Targets"]
+position = Vector2(980, 360)
+
+[node name="Shadow" type="Polygon2D" parent="World/Targets/Target4"]
+position = Vector2(0, 8)
+polygon = PackedVector2Array(0, -38, 38, 0, 0, 38, -38, 0)
+color = Color(0.12, 0.25, 0.12, 0.28)
+
+[node name="Rim" type="Polygon2D" parent="World/Targets/Target4"]
+polygon = PackedVector2Array(0, -34, 34, 0, 0, 34, -34, 0)
+color = Color(0.39, 0.69, 0.35, 0.55)
+
+[node name="Inner" type="Polygon2D" parent="World/Targets/Target4"]
+polygon = PackedVector2Array(0, -22, 22, 0, 0, 22, -22, 0)
+color = Color(0.14, 0.36, 0.12, 0.45)
+
+[node name="LoopLeft" type="Polygon2D" parent="World/Targets/Target4"]
+polygon = PackedVector2Array(-22, 8, -12, -2, -2, 8, -12, 18)
+color = Color(0.18, 0.2, 0.18, 0.55)
+
+[node name="LoopRight" type="Polygon2D" parent="World/Targets/Target4"]
+polygon = PackedVector2Array(2, 8, 12, -2, 22, 8, 12, 18)
+color = Color(0.18, 0.2, 0.18, 0.55)
+
+[node name="BladeLeft" type="Polygon2D" parent="World/Targets/Target4"]
+polygon = PackedVector2Array(-4, 6, -18, -24, 0, -4)
+color = Color(0.18, 0.2, 0.18, 0.55)
+
+[node name="BladeRight" type="Polygon2D" parent="World/Targets/Target4"]
+polygon = PackedVector2Array(4, 6, 18, -24, 0, -4)
+color = Color(0.18, 0.2, 0.18, 0.55)
+
+[node name="Label" type="Label" parent="World/Targets/Target4"]
+offset_left = -38.0
+offset_top = 34.0
+offset_right = 38.0
+offset_bottom = 54.0
+text = "Scissors"
+horizontal_alignment = 1
+
+[node name="Target5" type="Node2D" parent="World/Targets"]
+position = Vector2(740, 520)
+
+[node name="Shadow" type="Polygon2D" parent="World/Targets/Target5"]
+position = Vector2(0, 8)
+polygon = PackedVector2Array(0, -38, 38, 0, 0, 38, -38, 0)
+color = Color(0.1, 0.18, 0.34, 0.28)
+
+[node name="Rim" type="Polygon2D" parent="World/Targets/Target5"]
+polygon = PackedVector2Array(0, -34, 34, 0, 0, 34, -34, 0)
+color = Color(0.33, 0.53, 0.84, 0.55)
+
+[node name="Inner" type="Polygon2D" parent="World/Targets/Target5"]
+polygon = PackedVector2Array(0, -22, 22, 0, 0, 22, -22, 0)
+color = Color(0.12, 0.24, 0.46, 0.45)
+
+[node name="Outer" type="Polygon2D" parent="World/Targets/Target5"]
+polygon = PackedVector2Array(-22, -18, 22, -18, 22, 18, -22, 18)
+color = Color(0.18, 0.19, 0.2, 0.55)
+
+[node name="InnerHole" type="Polygon2D" parent="World/Targets/Target5"]
+polygon = PackedVector2Array(-10, -8, 10, -8, 10, 8, -10, 8)
+color = Color(0.82, 0.87, 0.83, 0.8)
+
+[node name="Label" type="Label" parent="World/Targets/Target5"]
+offset_left = -30.0
+offset_top = 34.0
+offset_right = 30.0
+offset_bottom = 54.0
+text = "Tape"
+horizontal_alignment = 1
+
+[node name="Target6" type="Node2D" parent="World/Targets"]
+position = Vector2(980, 520)
+
+[node name="Shadow" type="Polygon2D" parent="World/Targets/Target6"]
+position = Vector2(0, 8)
+polygon = PackedVector2Array(0, -38, 38, 0, 0, 38, -38, 0)
+color = Color(0.16, 0.19, 0.3, 0.28)
+
+[node name="Rim" type="Polygon2D" parent="World/Targets/Target6"]
+polygon = PackedVector2Array(0, -34, 34, 0, 0, 34, -34, 0)
+color = Color(0.31, 0.46, 0.72, 0.55)
+
+[node name="Inner" type="Polygon2D" parent="World/Targets/Target6"]
+polygon = PackedVector2Array(0, -22, 22, 0, 0, 22, -22, 0)
+color = Color(0.14, 0.22, 0.4, 0.45)
+
+[node name="Handle" type="Polygon2D" parent="World/Targets/Target6"]
+polygon = PackedVector2Array(-6, -4, 6, -4, 6, 24, -6, 24)
+color = Color(0.18, 0.19, 0.2, 0.55)
+
+[node name="Jaw" type="Polygon2D" parent="World/Targets/Target6"]
+polygon = PackedVector2Array(-12, -20, 12, -20, 20, -6, 8, -2, 8, -10, -8, -10, -8, -2, -20, -6)
+color = Color(0.18, 0.19, 0.2, 0.55)
+
+[node name="Label" type="Label" parent="World/Targets/Target6"]
+offset_left = -34.0
+offset_top = 34.0
+offset_right = 34.0
+offset_bottom = 54.0
+text = "Wrench"
+horizontal_alignment = 1
+
+[node name="Items" type="Node2D" parent="World"]
+
+[node name="ItemHammer" type="Node2D" parent="World/Items"]
+position = Vector2(238, 200)
+
+[node name="Head" type="Polygon2D" parent="World/Items/ItemHammer"]
+polygon = PackedVector2Array(-24, -22, 24, -22, 24, -8, -24, -8)
+color = Color(0.66, 0.67, 0.69, 1)
+
+[node name="Handle" type="Polygon2D" parent="World/Items/ItemHammer"]
+polygon = PackedVector2Array(-6, -8, 6, -8, 6, 26, -6, 26)
+color = Color(0.72, 0.4, 0.2, 1)
+
+[node name="ItemScrewdriver" type="Node2D" parent="World/Items"]
+position = Vector2(380, 200)
+
+[node name="Handle" type="Polygon2D" parent="World/Items/ItemScrewdriver"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 18, -8, 18)
+color = Color(0.87, 0.35, 0.2, 1)
+
+[node name="Tip" type="Polygon2D" parent="World/Items/ItemScrewdriver"]
+polygon = PackedVector2Array(-3, -30, 3, -30, 6, -8, -6, -8)
+color = Color(0.72, 0.74, 0.78, 1)
+
+[node name="ItemRuler" type="Node2D" parent="World/Items"]
+position = Vector2(238, 360)
+
+[node name="Bar" type="Polygon2D" parent="World/Items/ItemRuler"]
+polygon = PackedVector2Array(-34, -6, 34, -6, 34, 6, -34, 6)
+color = Color(0.97, 0.8, 0.33, 1)
+
+[node name="Tick1" type="Polygon2D" parent="World/Items/ItemRuler"]
+polygon = PackedVector2Array(-24, -6, -20, -6, -20, 6, -24, 6)
+color = Color(0.4, 0.28, 0.14, 1)
+
+[node name="Tick2" type="Polygon2D" parent="World/Items/ItemRuler"]
+polygon = PackedVector2Array(-10, -6, -6, -6, -6, 6, -10, 6)
+color = Color(0.4, 0.28, 0.14, 1)
+
+[node name="Tick3" type="Polygon2D" parent="World/Items/ItemRuler"]
+polygon = PackedVector2Array(4, -6, 8, -6, 8, 6, 4, 6)
+color = Color(0.4, 0.28, 0.14, 1)
+
+[node name="Tick4" type="Polygon2D" parent="World/Items/ItemRuler"]
+polygon = PackedVector2Array(18, -6, 22, -6, 22, 6, 18, 6)
+color = Color(0.4, 0.28, 0.14, 1)
+
+[node name="ItemScissors" type="Node2D" parent="World/Items"]
+position = Vector2(380, 360)
+
+[node name="LoopLeft" type="Polygon2D" parent="World/Items/ItemScissors"]
+polygon = PackedVector2Array(-22, 8, -12, -2, -2, 8, -12, 18)
+color = Color(0.55, 0.26, 0.65, 1)
+
+[node name="LoopRight" type="Polygon2D" parent="World/Items/ItemScissors"]
+polygon = PackedVector2Array(2, 8, 12, -2, 22, 8, 12, 18)
+color = Color(0.55, 0.26, 0.65, 1)
+
+[node name="BladeLeft" type="Polygon2D" parent="World/Items/ItemScissors"]
+polygon = PackedVector2Array(-4, 6, -18, -24, 0, -4)
+color = Color(0.77, 0.79, 0.83, 1)
+
+[node name="BladeRight" type="Polygon2D" parent="World/Items/ItemScissors"]
+polygon = PackedVector2Array(4, 6, 18, -24, 0, -4)
+color = Color(0.77, 0.79, 0.83, 1)
+
+[node name="ItemTape" type="Node2D" parent="World/Items"]
+position = Vector2(238, 520)
+
+[node name="Outer" type="Polygon2D" parent="World/Items/ItemTape"]
+polygon = PackedVector2Array(-22, -18, 22, -18, 22, 18, -22, 18)
+color = Color(0.97, 0.92, 0.53, 1)
+
+[node name="InnerHole" type="Polygon2D" parent="World/Items/ItemTape"]
+polygon = PackedVector2Array(-10, -8, 10, -8, 10, 8, -10, 8)
+color = Color(0.9, 0.93, 0.88, 1)
+
+[node name="ItemWrench" type="Node2D" parent="World/Items"]
+position = Vector2(380, 520)
+
+[node name="Handle" type="Polygon2D" parent="World/Items/ItemWrench"]
+polygon = PackedVector2Array(-6, -4, 6, -4, 6, 24, -6, 24)
+color = Color(0.61, 0.66, 0.74, 1)
+
+[node name="Jaw" type="Polygon2D" parent="World/Items/ItemWrench"]
+polygon = PackedVector2Array(-12, -20, 12, -20, 20, -6, 8, -2, 8, -10, -8, -10, -8, -2, -20, -6)
+color = Color(0.61, 0.66, 0.74, 1)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Instructions" type="Label" parent="UI"]
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 980.0
+offset_bottom = 74.0
+text = "Game 2: Drag each tool to its matching socket. Correct matches click in and lock."
+
+[node name="BoardTitle" type="Label" parent="UI"]
+offset_left = 112.0
+offset_top = 84.0
+offset_right = 436.0
+offset_bottom = 124.0
+text = "Tools"
+
+[node name="BoardTitleTargets" type="Label" parent="UI"]
+offset_left = 638.0
+offset_top = 84.0
+offset_right = 986.0
+offset_bottom = 124.0
+text = "Sockets"
+
+[node name="Status" type="Label" parent="UI"]
+offset_left = 20.0
+offset_top = 48.0
+offset_right = 980.0
+offset_bottom = 92.0
+text = ""
+
+[node name="WinPanel" type="Panel" parent="UI"]
+visible = false
+offset_left = 430.0
+offset_top = 210.0
+offset_right = 850.0
+offset_bottom = 470.0
+
+[node name="WinTitle" type="Label" parent="UI/WinPanel"]
+offset_left = 120.0
+offset_top = 34.0
+offset_right = 300.0
+offset_bottom = 78.0
+text = "You Win"
+horizontal_alignment = 1
+
+[node name="WinBody" type="Label" parent="UI/WinPanel"]
+offset_left = 72.0
+offset_top = 92.0
+offset_right = 348.0
+offset_bottom = 142.0
+text = "All 6 tools are locked into position."
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="UI/WinPanel"]
+offset_left = 120.0
+offset_top = 166.0
+offset_right = 300.0
+offset_bottom = 210.0
+text = "Restart"
+
+[node name="EndButton" type="Button" parent="UI/WinPanel"]
+offset_left = 120.0
+offset_top = 216.0
+offset_right = 300.0
+offset_bottom = 260.0
+text = "End"
